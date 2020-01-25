@@ -18,6 +18,26 @@ Separate concepts in contexts will be another exercise that I would like to appl
 * Manager (⚠️  WIP): Deal with generic resources required by other contexts like `SportsCenters` and `Courts`.
 * Booking: Rules and Matches actions will be performed here.
 
+## Getting started
+
+Configure your database in config/dev.exs and run:
+
+```
+mix ecto.create
+```
+
+Start Phoenix app with:
+
+```
+mix phx.server
+```
+
+You can also run the app inside IEx (Interactive Elixir) as:
+
+```
+iex -S mix phx.server
+```
+
 ## License
 
 padelhub is released under the [MIT License](https://opensource.org/licenses/MIT).
