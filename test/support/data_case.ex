@@ -16,11 +16,13 @@ defmodule Padelhub.DataCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL
+
   using do
     quote do
-      alias Padelhub.Repo
+      alias Padelhub.Repo,
+            import(Ecto)
 
-      import Ecto
       import Ecto.Changeset
       import Ecto.Query
       import Padelhub.DataCase
@@ -28,10 +30,10 @@ defmodule Padelhub.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Padelhub.Repo)
+    :ok = SQL.Sandbox.checkout(Padelhub.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Padelhub.Repo, {:shared, self()})
+      SQL.Sandbox.mode(Padelhub.Repo, {:shared, self()})
     end
 
     :ok
