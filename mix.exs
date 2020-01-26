@@ -57,7 +57,7 @@ defmodule Padelhub.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      code_quality: ["format", "credo --strict", "dialyzer"],
+      code_quality: ["format", "credo --strict"],
       test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
